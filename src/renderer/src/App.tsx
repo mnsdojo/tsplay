@@ -1,9 +1,7 @@
-import React from 'react'
+import Playground from './components/playground/Playground'
 
 function App() {
-  return (
-    <div>App</div>
-  )
+  return <Playground />
 }
 
 export default App
