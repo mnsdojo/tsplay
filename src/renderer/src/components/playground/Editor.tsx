@@ -19,7 +19,9 @@ loader.init().then((monaco) => {
       'editorLineNumber.foreground': '#4C566A',
       'editorCursor.foreground': '#D8DEE9',
       'editor.selectionBackground': '#434C5E',
-      'editor.inactiveSelectionBackground': '#3B4252'
+      'editor.inactiveSelectionBackground': '#3B4252',
+      'editorOverviewRuler.border': '#2E3440',
+      'editor.lineHighlightBorder': '#2E3440'
     }
   })
 })
@@ -27,10 +29,20 @@ loader.init().then((monaco) => {
 interface MonacoEditorProps {
   defaultValue: string
   onChange: (value: string | undefined) => void
+  options?: any
   theme?: string
+  fontFamily: string
+  fontSize: number
 }
 
-const MonacoEditor: React.FC<MonacoEditorProps> = ({ defaultValue, onChange, theme = 'nord' }) => {
+const MonacoEditor: React.FC<MonacoEditorProps> = ({
+  defaultValue,
+  onChange,
+  options,
+  theme = 'nord',
+  fontFamily,
+  fontSize
+}) => {
   return (
     <Editor
       height="100%"
@@ -40,13 +52,21 @@ const MonacoEditor: React.FC<MonacoEditorProps> = ({ defaultValue, onChange, the
       theme={theme}
       options={{
         minimap: { enabled: false },
-        fontSize: 14,
+        fontSize: fontSize,
+        fontFamily: fontFamily,
         wordWrap: 'on',
         scrollBeyondLastLine: false,
         automaticLayout: true,
         lineNumbers: 'off',
         folding: false,
-        glyphMargin: false
+        glyphMargin: false,
+        roundedSelection: false,
+        scrollbar: {
+          vertical: 'hidden',
+          horizontal: 'hidden'
+        },
+        overviewRulerBorder: false,
+        ...options
       }}
     />
   )
