@@ -2,3 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --theme-bg: #2E3440;
+  --theme-text: #D8DEE9;
+  --theme-border: #4C566A;
+  --theme-button: #434C5E;
+  --theme-button-hover: #4C566A;
+  --theme-button-text: #E5E9F0;
+  --theme-run-button: #5E81AC;
+  --theme-run-button-hover: #81A1C1;
+  --theme-run-button-text: #ECEFF4;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2e3440;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4c566a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5e81ac;
+}

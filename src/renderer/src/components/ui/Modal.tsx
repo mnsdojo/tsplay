@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { themes } from '../../theme/theme'
 
 interface SettingsModalProps {
   isOpen: boolean
@@ -41,6 +42,13 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
     'Lucida Console',
     'Andale Mono'
   ]
+  const themeOptions = Object.keys(themes).map((themeName) => ({
+    value: themeName,
+    label: themeName
+      .split('-')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
+  }))
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center overflow-y-auto">
@@ -55,9 +63,11 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
               onChange={(e) => setSettings({ ...settings, theme: e.target.value })}
               className="bg-nord2 p-2 rounded w-full"
             >
-              <option value="nord">Nord</option>
-              <option value="vs-dark">VS Dark</option>
-              <option value="vs-light">VS Light</option>
+              {themeOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
             </select>
           </div>
 

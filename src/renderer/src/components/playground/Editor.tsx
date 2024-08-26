@@ -1,30 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Editor, { loader } from '@monaco-editor/react'
-
-// Define Nord theme
-loader.init().then((monaco) => {
-  monaco.editor.defineTheme('nord', {
-    base: 'vs-dark',
-    inherit: true,
-    rules: [
-      { token: 'comment', foreground: '616E88' },
-      { token: 'keyword', foreground: '81A1C1' },
-      { token: 'string', foreground: 'A3BE8C' },
-      { token: 'number', foreground: 'B48EAD' },
-      { token: 'type', foreground: '8FBCBB' }
-    ],
-    colors: {
-      'editor.background': '#2E3440',
-      'editor.foreground': '#D8DEE9',
-      'editorLineNumber.foreground': '#4C566A',
-      'editorCursor.foreground': '#D8DEE9',
-      'editor.selectionBackground': '#434C5E',
-      'editor.inactiveSelectionBackground': '#3B4252',
-      'editorOverviewRuler.border': '#2E3440',
-      'editor.lineHighlightBorder': '#2E3440'
-    }
-  })
-})
+import { defineThemes } from '../../theme/theme'
 
 interface MonacoEditorProps {
   defaultValue: string
@@ -43,6 +19,11 @@ const MonacoEditor: React.FC<MonacoEditorProps> = ({
   fontFamily,
   fontSize
 }) => {
+  useEffect(() => {
+    loader.init().then((monaco) => {
+      defineThemes(monaco)
+    })
+  }, [])
   return (
     <Editor
       height="100%"

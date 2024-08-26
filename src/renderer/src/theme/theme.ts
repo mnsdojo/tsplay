@@ -144,6 +144,111 @@ export const themes: Themes = {
       'editorOverviewRuler.border': '#2E3440',
       'editor.lineHighlightBackground': '#3B4252'
     }
+  },
+  'one-dark': {
+    base: 'vs-dark',
+    inherit: true,
+    rules: [
+      { token: 'comment', foreground: '5C6370' },
+      { token: 'keyword', foreground: 'C678DD' },
+      { token: 'string', foreground: '98C379' },
+      { token: 'number', foreground: 'D19A66' },
+      { token: 'type', foreground: '61AFEF' }
+    ],
+    colors: {
+      'editor.background': '#282C34',
+      'editor.foreground': '#ABB2BF',
+      'editorLineNumber.foreground': '#4B5263',
+      'editorCursor.foreground': '#528BFF',
+      'editor.selectionBackground': '#3E4451',
+      'editor.inactiveSelectionBackground': '#333842',
+      'editorOverviewRuler.border': '#282C34',
+      'editor.lineHighlightBackground': '#2C313C'
+    }
+  },
+  'solarized-dark': {
+    base: 'vs-dark',
+    inherit: true,
+    rules: [
+      { token: 'comment', foreground: '586E75' },
+      { token: 'keyword', foreground: '859900' },
+      { token: 'string', foreground: '2AA198' },
+      { token: 'number', foreground: 'D33682' },
+      { token: 'type', foreground: '268BD2' }
+    ],
+    colors: {
+      'editor.background': '#002B36',
+      'editor.foreground': '#839496',
+      'editorLineNumber.foreground': '#586E75',
+      'editorCursor.foreground': '#839496',
+      'editor.selectionBackground': '#073642',
+      'editor.inactiveSelectionBackground': '#073642',
+      'editorOverviewRuler.border': '#002B36',
+      'editor.lineHighlightBackground': '#073642'
+    }
+  },
+  'material-darker': {
+    base: 'vs-dark',
+    inherit: true,
+    rules: [
+      { token: 'comment', foreground: '546E7A' },
+      { token: 'keyword', foreground: 'C792EA' },
+      { token: 'string', foreground: 'C3E88D' },
+      { token: 'number', foreground: 'F78C6C' },
+      { token: 'type', foreground: '82AAFF' }
+    ],
+    colors: {
+      'editor.background': '#212121',
+      'editor.foreground': '#EEFFFF',
+      'editorLineNumber.foreground': '424242',
+      'editorCursor.foreground': '#FFCC00',
+      'editor.selectionBackground': '#323232',
+      'editor.inactiveSelectionBackground': '#2C2C2C',
+      'editorOverviewRuler.border': '#212121',
+      'editor.lineHighlightBackground': '#323232'
+    }
+  },
+  'night-owl': {
+    base: 'vs-dark',
+    inherit: true,
+    rules: [
+      { token: 'comment', foreground: '637777' },
+      { token: 'keyword', foreground: 'C792EA' },
+      { token: 'string', foreground: 'ECC48D' },
+      { token: 'number', foreground: 'F78C6C' },
+      { token: 'type', foreground: '7FDBCA' }
+    ],
+    colors: {
+      'editor.background': '#011627',
+      'editor.foreground': '#D6DEEB',
+      'editorLineNumber.foreground': '4B6479',
+      'editorCursor.foreground': '#80A4C2',
+      'editor.selectionBackground': '#1D3B53',
+      'editor.inactiveSelectionBackground': '#152B3E',
+      'editorOverviewRuler.border': '#011627',
+      'editor.lineHighlightBackground': '#0E2D44'
+    }
+  },
+  'monokai-pro': {
+    base: 'vs-dark',
+    inherit: true,
+    rules: [
+      { token: 'comment', foreground: '5C6370' },
+      { token: 'keyword', foreground: 'FF6D7E' },
+      { token: 'string', foreground: 'A9DC76' },
+      { token: 'number', foreground: 'FFD866' },
+      { token: 'type', foreground: '78DCE8' }
+    ],
+    colors: {
+      'editor.background': '#2D2A2E',
+      'editor.foreground': '#FCFCFA',
+      'editorLineNumber.foreground': '5C6370',
+      'editorCursor.foreground': '#FCFCFA',
+      'editor.selectionBackground': '#423F42',
+      'editor.inactiveSelectionBackground': '#3A3739',
+      'editorOverviewRuler.border': '#2D2A2E',
+      'editor.lineHighlightBackground': '#3A3739'
+    }
   }
 }
 
